@@ -1,3 +1,6 @@
+package Strings;
+// Reverse a String
+
 public class Strings {
     public static void main (String args[]) {
         StringBuilder sb = new StringBuilder("hello");
