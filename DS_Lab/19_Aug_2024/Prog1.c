@@ -8,101 +8,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct node {
-    int element;
+// Definition of a node in the linked list
+struct Node {
+    int data;
     struct Node *next;
 };
 
-struct Node *createNode(int element);
-
-// List of the functions required for this program
-void insertNodeAtSpecificPosition(struct Node **head, int element, int position);
-void insertNodeAtBeginning(struct Node **head, int element);
-void deleteAtSpecificPosition(struct Node **head, int position);
-int countNodes(struct Node *head);
-void traverseLinkedList(struct Node *head);
-
-int main() {
-    struct Node *head = NULL;
-    int element, choice, position;
-
-    while (1) {
-        printf("\nMenu:\n");
-        printf("1. Insert a node at specific position\n");
-        printf("2. Insert a node at the beginning\n");
-        printf("3. Delete an element from specific position\n");
-        printf("4. Count the number of nodes\n");
-        printf("5. Traverse the linked list\n");
-        printf("6. Exit\n");
-
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
-
-        switch (choice) {
-        case 1:
-            printf("Enter the element to insert: ");
-            scanf("%d", &element);
-            printf("Enter the position where the element is to be inserted: ");
-            scanf("%d", &position);
-            insertNodeAtSpecificPosition(&head, element, position);
-            break;
-
-        case 2:
-            printf("Enter the element to insert: ");
-            scanf("%d", &element);
-            insertNodeAtBeginning(&head, element, position);
-            break;
-
-        case 3:
-            printf("Enter the element to be deleted: ");
-            scanf("%d", &element);
-            printf("Enter the position from where the element is to be deleted: ");
-            scanf("%d", &position);
-            deleteAtSpecificPosition(&head, element, position);
-            break;
-
-        case 4:
-            printf("The total number of nodes present are: %d\n", countNodes(head));
-            break;
-
-        case 5:
-            traverseList(head);
-            break;
-
-        case 6:
-            exit(0);
-
-        default:
-            printf("Invalid choice. Please try again.\n");
-        }
-    }
-}
-
 // Function to create a new node
-struct Node *createNode(int element) {
+struct Node *createNode(int data) {
     struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
-    newNode->element = element;
+    newNode->data = data;
     newNode->next = NULL;
     return newNode;
 }
 
 // Function to insert a node at a specific position
-void insertNodeAtSpecificPosition (struct Node **head, int data, int position) {
-    struct Node* newNode = createNode(data);
+void insertAtPosition(struct Node **head, int data, int position) {
+    struct Node *newNode = createNode(data);
     if (position == 1) {
         newNode->next = *head;
         *head = newNode;
         return;
     }
 
-    struct Node* temp = *head;
-    for (int i = 1; temp != NULL && i < position - 1; i++) {
+    struct Node *temp = *head;
+    for (int i = 1; i < position - 1 && temp != NULL; i++) {
         temp = temp->next;
     }
 
     if (temp == NULL) {
-        printf("Position out of range\n");
-        free(newNode);
+        printf("Position out of bounds\n");
         return;
     }
 
@@ -111,20 +46,20 @@ void insertNodeAtSpecificPosition (struct Node **head, int data, int position) {
 }
 
 // Function to insert a node at the beginning
-void insertNodeAtBeginning(struct Node **head, int data) {
-    struct Node* newNode = createNode(data);
+void insertAtBeginning(struct Node **head, int data) {
+    struct Node *newNode = createNode(data);
     newNode->next = *head;
     *head = newNode;
 }
 
-// Function to delete an element from a specific position
-void deleteAtSpecificPosition(struct Node **head, int data, int position) {
+// Function to delete a node from a specific position
+void deleteAtPosition(struct Node **head, int position) {
     if (*head == NULL) {
         printf("List is empty\n");
         return;
     }
 
-    struct Node* temp = *head;
+    struct Node *temp = *head;
 
     if (position == 1) {
         *head = temp->next;
@@ -132,47 +67,90 @@ void deleteAtSpecificPosition(struct Node **head, int data, int position) {
         return;
     }
 
-    struct Node* prev = NULL;
-    for (int i = 1; temp != NULL && i < position; i++) {
-        prev = temp;
+    for (int i = 1; i < position - 1 && temp != NULL; i++) {
         temp = temp->next;
     }
 
-    if (temp == NULL) {
-        printf("Position out of range\n");
+    if (temp == NULL || temp->next == NULL) {
+        printf("Position out of bounds\n");
         return;
     }
 
-    prev->next = temp->next;
-    free(temp);
+    struct Node *next = temp->next->next;
+    free(temp->next);
+    temp->next = next;
 }
 
-// Function to count the number of nodes in the linked list
-int countNodes(struct Node* head) {
+// Function to count the number of nodes
+int countNodes(struct Node *head) {
     int count = 0;
-    struct Node* temp = head;
-
+    struct Node *temp = head;
     while (temp != NULL) {
         count++;
         temp = temp->next;
     }
-
     return count;
 }
 
-// Function to traverse the linked list
-void traverseLinkedList(struct Node* head) {
-    struct Node* temp = head;
-
-    if (temp == NULL) {
-        printf("List is empty\n");
-        return;
-    }
-
-    printf("Linked list: ");
+// Function to traverse the linked list and print the elements
+void traverseList(struct Node *head) {
+    struct Node *temp = head;
     while (temp != NULL) {
         printf("%d -> ", temp->data);
         temp = temp->next;
     }
     printf("NULL\n");
+}
+
+// Main function
+int main() {
+    struct Node *head = NULL;
+    int choice, data, position;
+
+    while (1) {
+        printf("\nMenu:\n");
+        printf("1. Insert a node at specific position\n");
+        printf("2. Insert a node at the beginning\n");
+        printf("3. Delete a node from specific position\n");
+        printf("4. Count nodes\n");
+        printf("5. Traverse the linked list\n");
+        printf("6. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+        case 1:
+            printf("Enter the data: ");
+            scanf("%d", &data);
+            printf("Enter the position: ");
+            scanf("%d", &position);
+            insertAtPosition(&head, data, position);
+            break;
+        case 2:
+            printf("Enter the data: ");
+            scanf("%d", &data);
+            insertAtBeginning(&head, data);
+            break;
+        case 3:
+            printf("Enter the position: ");
+            scanf("%d", &position);
+            deleteAtPosition(&head, position);
+            break;
+        case 4:
+            printf("Number of nodes: %d\n", countNodes(head));
+            break;
+        case 5:
+            printf("Linked list: ");
+            traverseList(head);
+            break;
+        case 6:
+            exit(0);
+            break;
+        default:
+            printf("Invalid choice, please try again.\n");
+        }
+    }
+
+    return 0;
 }
