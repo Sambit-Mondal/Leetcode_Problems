@@ -19,19 +19,31 @@ struct Node* createNode(int data) {
     return newNode;
 }
 
-// Function to insert a node at the end of the list
-void insertAtEnd(struct Node** head, int data) {
-    struct Node* newNode = createNode(data);
-    if (*head == NULL) {
-        *head = newNode;
-        return;
+// Function to create a linked list with 'n' nodes
+struct Node* createLinkedList(int n) {
+    struct Node* head = NULL;
+    struct Node* temp = NULL;
+
+    if (n <= 0) {
+        printf("Number of nodes must be greater than 0\n");
+        return NULL;
     }
 
-    struct Node* temp = *head;
-    while (temp->next != NULL) {
-        temp = temp->next;
+    for (int i = 1; i <= n; i++) {
+        int data;
+        printf("Enter data for node %d: ", i);
+        scanf("%d", &data);
+        struct Node* newNode = createNode(data);
+
+        if (head == NULL) {
+            head = newNode;
+            temp = head;
+        } else {
+            temp->next = newNode;
+            temp = temp->next;
+        }
     }
-    temp->next = newNode;
+    return head;
 }
 
 // Function to search for an element in the list
@@ -55,9 +67,9 @@ void reverseList(struct Node** head) {
     struct Node* next = NULL;
 
     while (current != NULL) {
-        next = current->next;
-        current->next = prev;
-        prev = current;
+        next = current->next;  // Store the next node
+        current->next = prev;  // Reverse the current node's pointer
+        prev = current;        // Move pointers one position ahead
         current = next;
     }
     *head = prev;
@@ -76,25 +88,23 @@ void traverseList(struct Node* head) {
 // Main function
 int main() {
     struct Node* head = NULL;
-    int choice, data, key, position;
+    int n, choice, key, position;
+
+    printf("Enter the number of nodes to create: ");
+    scanf("%d", &n);
+    head = createLinkedList(n);
 
     while (1) {
         printf("\nMenu:\n");
-        printf("1. Insert a node at the end\n");
-        printf("2. Search for an element in the list\n");
-        printf("3. Reverse the list\n");
-        printf("4. Traverse the linked list\n");
-        printf("5. Exit\n");
+        printf("1. Search for an element in the list\n");
+        printf("2. Reverse the list\n");
+        printf("3. Traverse the linked list\n");
+        printf("4. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
         switch (choice) {
             case 1:
-                printf("Enter the data: ");
-                scanf("%d", &data);
-                insertAtEnd(&head, data);
-                break;
-            case 2:
                 printf("Enter the element to search: ");
                 scanf("%d", &key);
                 position = searchElement(head, key);
@@ -104,15 +114,15 @@ int main() {
                     printf("Element %d not found in the list\n", key);
                 }
                 break;
-            case 3:
+            case 2:
                 reverseList(&head);
                 printf("List reversed.\n");
                 break;
-            case 4:
+            case 3:
                 printf("Linked list: ");
                 traverseList(head);
                 break;
-            case 5:
+            case 4:
                 exit(0);
                 break;
             default:
