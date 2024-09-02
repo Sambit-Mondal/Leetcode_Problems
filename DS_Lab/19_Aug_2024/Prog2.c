@@ -75,16 +75,6 @@ void reverseList(struct Node** head) {
     *head = prev;
 }
 
-// Function to traverse the linked list and print the elements
-void traverseList(struct Node* head) {
-    struct Node* temp = head;
-    while (temp != NULL) {
-        printf("%d -> ", temp->data);
-        temp = temp->next;
-    }
-    printf("NULL\n");
-}
-
 // Main function
 int main() {
     struct Node* head = NULL;
@@ -98,8 +88,7 @@ int main() {
         printf("\nMenu:\n");
         printf("1. Search for an element in the list\n");
         printf("2. Reverse the list\n");
-        printf("3. Traverse the linked list\n");
-        printf("4. Exit\n");
+        printf("3. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
@@ -119,10 +108,6 @@ int main() {
                 printf("List reversed.\n");
                 break;
             case 3:
-                printf("Linked list: ");
-                traverseList(head);
-                break;
-            case 4:
                 exit(0);
                 break;
             default:
