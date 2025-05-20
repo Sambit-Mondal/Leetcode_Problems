@@ -1,3 +1,5 @@
+// 36. Valid Sudoku (https://leetcode.com/problems/valid-sudoku/)
+
 class Valid_Sudoku {
     public boolean isValidSudoku(char[][] board) {
         int[] rows = new int[9];

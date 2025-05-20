@@ -1,3 +1,5 @@
+// 3355. Zero Array Transformation I (https://leetcode.com/problems/zero-array-transformation-i/)
+
 class Zero_Array_Transformation_I {
     public boolean isZeroArray(int[] nums, int[][] queries) {
         int[] deltaArray = new int[nums.length + 1];
