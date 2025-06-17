@@ -1,4 +1,4 @@
-# 📘 Leetcode\_Problems
+# 📘 Leetcode Problems
 
 Welcome to my personal repository where I regularly practice and document solutions to LeetCode problems in preparation for software engineering roles, including internships at top tech companies.
 
