@@ -49,10 +49,10 @@ This repository is a curated collection of my solutions to **LeetCode problems**
 ## ✍️ Author
 
 **Sambit Mondal**
-[![LinkedIn](https://linkedin.com/in/sambitm02)
-[![LeetCode](https://leetcode.com/u/dev_Sambit)
-[![GitHub](https://github.com/Sambit-Mondal)
-[![Portfolio](https://devsambit.tech)
+* [LinkedIn](https://linkedin.com/in/sambitm02)
+* [LeetCode](https://leetcode.com/u/dev_Sambit)
+* [GitHub](https://github.com/Sambit-Mondal)
+* [Portfolio](https://devsambit.tech)
 
 ---
 
