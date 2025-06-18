@@ -19,8 +19,6 @@ This repository is a curated collection of my solutions to **LeetCode problems**
 | Medium         | `19` |
 | Hard           | `6` |
 
-> 🧠 Target: 300+ quality problems solved before September 2025 (Google Internship applications).
-
 ---
 
 ## 🧩 Problem Categories
