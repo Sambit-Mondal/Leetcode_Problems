@@ -1,7 +1,7 @@
 // 53. Maximum Subarray (https://leetcode.com/problems/maximum-subarray/)
 
 // TC = O(n)
-// SC = O(n)
+// SC = O(1)
 
 class Solution {
     public int maxSubArray(int[] nums) {
