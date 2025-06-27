@@ -14,10 +14,21 @@ This repository is a curated collection of my solutions to **LeetCode problems**
 
 | Category       | Count |
 | -------------- | ----- |
-| Total Problems | `45` |
-| Easy           | `17` |
-| Medium         | `22` |
+| Total Problems | `58` |
+| Easy           | `19` |
+| Medium         | `33` |
 | Hard           | `6` |
+
+---
+
+## 🎯 Contest Details
+
+| Name                      |  Date           | Solved |
+|---------------------------|-----------------|--------|
+| Biweekly Contest 159      | `21-06-2025`    | `1/4`  |
+
+> Contest Rating: 1547 (Attended: 1)
+> Global Ranking: 2,25,182 (Top 32.13%)
 
 ---
 
@@ -41,7 +52,6 @@ This repository is a curated collection of my solutions to **LeetCode problems**
 
 * [NeetCode 150](https://neetcode.io/)
 * [Blind 75 Sheet](https://www.techinterviewhandbook.org/grind75/)
-* [Leetcode Google Tag](https://leetcode.com/company/google/)
 * [Striver’s A2Z Sheet](https://takeuforward.org/interviews/strivers-sde-sheet-top-coding-interview-problems/)
 
 ---
