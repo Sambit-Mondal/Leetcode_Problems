@@ -14,10 +14,10 @@ This repository is a curated collection of my solutions to **LeetCode problems**
 
 | Category       | Count |
 | -------------- | ----- |
-| Total Problems | `58` |
-| Easy           | `19` |
-| Medium         | `33` |
-| Hard           | `6` |
+| Total Problems | `58`  |
+| Easy           | `19`  |
+| Medium         | `33`  |
+| Hard           | `6`   |
 
 ---
 
