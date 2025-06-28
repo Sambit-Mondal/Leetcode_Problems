@@ -27,7 +27,7 @@ This repository is a curated collection of my solutions to **LeetCode problems**
 |---------------------------|-----------------|--------|
 | Biweekly Contest 159      | `21-06-2025`    | `1/4`  |
 
-> Contest Rating: 1547 (Attended: 1)
+> Contest Rating: 1547 <br />
 > Global Ranking: 2,25,182 (Top 32.13%)
 
 ---
@@ -68,7 +68,7 @@ This repository is a curated collection of my solutions to **LeetCode problems**
 
 ## 📌 Note
 
-> If you find this repo helpful, feel free to ⭐ star it.
+> If you find this repo helpful, feel free to ⭐ star it. <br/>
 > Suggestions and improvements are welcome!
 
 ---
