@@ -26,6 +26,7 @@ This repository is a curated collection of my solutions to **LeetCode problems**
 | Name                      |  Date           | Solved |
 |---------------------------|-----------------|--------|
 | Biweekly Contest 159      | `21-06-2025`    | `1/4`  |
+| Biweekly Contest 160      | `05-07-2025`    | `4/4`  |
 
 > Contest Rating: 1547 <br />
 > Global Ranking: 2,25,182 (Top 32.13%)
