@@ -14,9 +14,9 @@ This repository is a curated collection of my solutions to **LeetCode problems**
 
 | Category       | Count |
 | -------------- | ----- |
-| Total Problems | `66`  |
+| Total Problems | `67`  |
 | Easy           | `23`  |
-| Medium         | `36`  |
+| Medium         | `37`  |
 | Hard           | `7`   |
 
 ---
